@@ -1,212 +1,413 @@
 function loadHeader() {
   document.write(`
-        <header> <!--class="sticky top-0 z-[9999]" (if sticky header is needed)-->
-    <!-- top header section-->
-    <div class="flex md:flex lg:flex-row justify-between md:justify-between md:h-12 items-center bg-pColor px-2 md:px-8 lg:px-8 rounded-box">
-      <div class="flex justify-center text-lg text-center ml-6 md:ml-5 lg:ml-0">
-        <a class="text-decoration-none pr-4 md:pr-10 hover:text-btnColor1" href="mailto:info@smafighterolivia.com">
-          <i class="fas fa-envelope"></i> 
-          <span class="hidden lg:inline">&nbsp;info@smafighterolivia.com</span>
-        </a>
-        <a class="flex-1 text-decoration-none hover:text-btnColor1" href="tel:+8801716912288">
-          <i class="fas fa-phone"></i> 
-          <span class="hidden md:inline">&nbsp;+880 1716-912288</span>
-        </a>
-      </div>
-      <div class="flex justify-center text-base text-center items-center md:mt-0">
-        <!-- Google Translate -->
-        <div id="google_translate_element" class="flex px-4" > 
-          <P class="pr-4">Language</P>
-        </div>
-        <!-- Google Translate Script -->
-        <script type="text/javascript">
-          function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-              pageLanguage: 'en',
-              includedLanguages: 'en,bn,hi,fr,de,es,ar,zh-CN',
-              layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
+    <header class="w-full">
+      <style>
+        /* Google Translate mobile icon-only */
+        @media (max-width: 767px) {
+          #google_translate_element {
+            max-width: 30px;
+            overflow: hidden;
           }
-        </script>
 
+          #google_translate_element .goog-te-gadget {
+            font-size: 0 !important;
+            line-height: 0 !important;
+          }
+
+          #google_translate_element .goog-te-gadget-simple {
+            width: 30px !important;
+            height: 30px !important;
+            overflow: hidden !important;
+            padding: 2px !important;
+            border: none !important;
+            background: transparent !important;
+          }
+
+          #google_translate_element .goog-te-gadget-simple span {
+            display: none !important;
+          }
+
+          #google_translate_element .goog-te-gadget-icon {
+            margin: 0 !important;
+          }
+        }
+
+        /* Desktop professional nav hover */
+        .pro-nav-link {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .pro-nav-link::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: -6px;
+          width: 0;
+          height: 2px;
+          background: currentColor;
+          transform: translateX(-50%);
+          transition: width 0.3s ease;
+        }
+
+        .pro-nav-link:hover {
+          transform: translateY(-2px);
+        }
+
+        .pro-nav-link:hover::after {
+          width: 100%;
+        }
+
+        /* Mobile menu link hover */
+        .pro-mobile-link {
+          transition: color 0.3s ease, padding-left 0.3s ease, background-color 0.3s ease;
+          border-radius: 8px;
+        }
+
+        .pro-mobile-link:hover {
+          padding-left: 18px;
+          background-color: rgba(255, 255, 255, 0.12);
+        }
+
+        /* Desktop gallery dropdown animation */
+        .pro-dropdown-menu {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(12px) scale(0.98);
+          transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+        }
+
+        .pro-dropdown:hover .pro-dropdown-menu,
+        .pro-dropdown:focus-within .pro-dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0) scale(1);
+        }
+
+        .pro-dropdown:hover .pro-dropdown-arrow,
+        .pro-dropdown:focus-within .pro-dropdown-arrow {
+          transform: rotate(180deg);
+        }
+
+        .pro-dropdown-arrow {
+          transition: transform 0.3s ease;
+        }
+      </style>
+
+      <!-- Top header section -->
+      <div class="flex flex-row justify-between items-center gap-2 bg-pColor px-2 md:px-8 py-2 md:py-0 md:h-12 rounded-box overflow-x-auto whitespace-nowrap">
         
-        <!-- <a class="flex text-decoration-none text-white p-2 md:p-3 hover:text-sColor" href="cure-sma-bd-blog.html">Blog</a>
-        <i class="fa-solid fa-hand-holding-medical text-white text-3xl pl-2 md:pl-3"></i> -->
-      </div>
-    </div>
+        <!-- Contact info -->
+        <div class="flex items-center text-sm md:text-lg text-center shrink-0">
+          <a class="text-decoration-none pr-3 md:pr-10 hover:text-btnColor1 transition-colors duration-300" href="mailto:info@smafighterolivia.com">
+            <i class="fas fa-envelope"></i>
+            <span class="hidden lg:inline">&nbsp;info@smafighterolivia.com</span>
+          </a>
 
-    <!-- navbar section-->
-    <nav>
-      <div class="flex flex-row justify-between bg-sColor py-2 lg:px-8 md:px-8 font-poppins text-pfont font-medium text-base shadow-lg navbar lg:bg-opacity-75 rounded-box">
-        <div>
-        <!-- mobile menu -->
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-                </svg>
-            </div>
-            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 mt-4 bg-sColor rounded-box w-80 border-r-4 border-pColor drop-shadow-lg">
-                <li class="my-2 border-b-2 border-pColor"><a href="index.html" class="text-lg hover:text-pColor">Home</a></li>
-                <li class="relative group hover:translate-y-1 hover:duration-[2s]">
-                  <a href="sma-fighter-olivia-story.html" class="hover:text-pColor text-lg  border-b-2 border-pColor">Olivia's Story</a>
-                </li>
-                <li><a href="sma-fighter-olivia-medical-history.html" class="my-2 border-b-2 border-pColor text-lg hover:text-btnColor1">Medical Story</a>
-                </li>
-                <li class="relative group hover:translate-y-1 hover:duration-[2s]">
-                    <a href="sma-fighter-olivia-update and progress.html" class="hover:text-pColor text-lg border-b-2 border-pColor">Update & Progress </a>
-                </li>
-                <li class="my-2 relative group hover:translate-y-1 hover:duration-[2s]">
-                    <a href="sma-fighter-olivia-about-sma.html" class="hover:text-pColor text-lg border-b-2 border-pColor">About SMA</a>
-                </li>
-                
-                </li>
-                <li class="relative group hover:translate-y-1 hover:duration-[2s]">
-                    <a href="sma-fighter-olivia-gallery.html" class="py-2 text-lg  hover:text-pColor border-b-2 border-pColor">Gallery</a>
-                </li>
-                <li><a href="sma-fighter-olivia-contact.html" class="text-lg relative group hover:translate-y-1 hover:duration-[2s] text-lg hover:text-pColor">Contact</a></li>
-            </ul>
-          </div>
-          
-          <script>
-              function toggleSubmenu(event) {
-                const hrefValue = event.currentTarget.getAttribute('href');
-
-                // Prevent browsing for specific links
-                if (hrefValue === "sma-fighter-olivia-contact.html" || hrefValue === "sma-fighter-olivia-contact.html") {
-                    event.preventDefault();
-                }
-
-                const submenu = event.currentTarget.nextElementSibling;
-
-                // Close other open submenus
-                document.querySelectorAll('.dropdown ul').forEach(ul => {
-                    if (ul !== submenu) {
-                        ul.classList.add('hidden');
-                    }
-                });
-
-                // Toggle the clicked submenu
-                submenu.classList.toggle('hidden');
-            }
-
-          </script>  
-        
-        <!-- site logo -->
-          <div>
-            <a href="#">
-              <img class="w-32" src="./src/images/logo.png" alt="SMA Fighter Olivia">
-            </a>
-          </div>  
+          <a class="text-decoration-none hover:text-btnColor1 transition-colors duration-300" href="tel:+8801716912288">
+            <i class="fas fa-phone"></i>
+            <span class="hidden md:inline">&nbsp;+880 1716-912288</span>
+          </a>
         </div>
 
-        <!-- large display menu -->
+        <!-- Top quick links -->
+        <div class="flex items-center text-xs md:text-base text-center shrink-0">
+          <a class="text-decoration-none px-2 md:px-3 hover:text-btnColor1 transition-colors duration-300" href="sma-fighter-olivia-medical-history.html">
+            <span class="hidden sm:inline">Medical History</span>
+            <span class="sm:hidden">Medical</span>
+          </a>
+
+          <a class="text-decoration-none px-2 md:px-3 hover:text-btnColor1 transition-colors duration-300" href="sma-fighter-olivia-contact.html">
+            Contact
+          </a>
+
+          <!-- Google Translate -->
+          <div class="flex items-center gap-1 px-1 md:px-4">
+            <i class="fa-solid fa-language md:hidden text-base"></i>
+            <span class="hidden md:inline pr-2">Language</span>
+            <div id="google_translate_element"></div>
+          </div>
+
+          <!-- Google Translate Script -->
+          <script type="text/javascript">
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,bn,hi,fr,de,es,ar,zh-CN',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+              }, 'google_translate_element');
+            }
+          <\/script>
+        </div>
+      </div>
+
+      <!-- Navbar section -->
+      <nav>
+        <div class="navbar justify-between bg-sColor py-2 px-2 md:px-8 font-poppins text-pfont font-medium text-base shadow-lg lg:bg-opacity-75 rounded-box">
+          
+          <!-- Navbar left: mobile menu + logo -->
+          <div class="navbar-start flex items-center gap-2">
+            
+            <!-- Mobile menu -->
+            <div class="relative lg:hidden">
+              <input id="mobile-menu-toggle" type="checkbox" class="peer hidden">
+
+              <label for="mobile-menu-toggle" role="button" class="btn btn-ghost transition-all duration-300 hover:text-btnColor1 hover:scale-110 active:scale-95" aria-label="Open or close main menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h12M4 18h16" />
+                </svg>
+              </label>
+
+              <ul class="absolute left-0 top-full mt-3 z-[9999] menu menu-sm p-3 bg-sColor rounded-box w-80 border-r-4 border-pColor drop-shadow-lg
+                max-h-0 opacity-0 -translate-y-2 overflow-hidden pointer-events-none
+                transition-all duration-300 ease-out
+                peer-checked:max-h-[85vh] peer-checked:opacity-100 peer-checked:translate-y-0 peer-checked:pointer-events-auto">
+
+                <li class="border-b-2 border-pColor">
+                  <a href="index.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
+                    Home
+                  </a>
+                </li>
+
+                <li class="border-b-2 border-pColor">
+                  <a href="sma-fighter-olivia-story.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
+                    Olivia's Story
+                  </a>
+                </li>
+
+                <li class="border-b-2 border-pColor">
+                  <a href="sma-fighter-olivia-medical-history.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
+                    Medical History
+                  </a>
+                </li>
+
+                <li class="border-b-2 border-pColor">
+                  <a href="sma-fighter-olivia-update and progress.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
+                    Update & Progress
+                  </a>
+                </li>
+
+                <li class="border-b-2 border-pColor">
+                  <a href="sma-fighter-olivia-about-sma.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
+                    About SMA
+                  </a>
+                </li>
+
+                <!-- Mobile Gallery Dropdown -->
+                <li class="border-b-2 border-pColor">
+                  <details>
+                    <summary class="text-lg hover:text-btnColor1 pro-mobile-link cursor-pointer">
+                      Gallery
+                    </summary>
+
+                    <ul class="p-2 bg-sColor">
+                      <li>
+                        <a href="sma-fighter-olivia-photo-gallery.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base hover:text-btnColor1 pro-mobile-link">
+                          <i class="fa-regular fa-image"></i>
+                          Photo Gallery
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="sma-fighter-olivia-video-gallery.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base hover:text-btnColor1 pro-mobile-link">
+                          <i class="fa-solid fa-video"></i>
+                          Video Gallery
+                        </a>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+
+                <li class="border-b-2 border-pColor">
+                  <a href="cure-sma-bd-blog.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
+                    Blog
+                  </a>
+                </li>
+
+                <li>
+                  <a href="sma-fighter-olivia-contact.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Site logo -->
+            <a href="index.html" aria-label="SMA Fighter Olivia Home" class="transition-transform duration-300 hover:scale-105">
+              <img class="w-28 md:w-32" src="./src/images/logo.png" alt="SMA Fighter Olivia">
+            </a>
+          </div>
+
+          <!-- Desktop menu -->
           <div class="navbar-center hidden lg:flex font-poppins font-semibold text-lg">
-            <ul class="flex space-x-4 px-1 gap-6 lg:gap-0 xl:gap-6">
-              <li><a href="index.html" class="hover:text-btnColor1">Home</a></li>
-              <li >
-                <a href="sma-fighter-olivia-story.html" class="hover:text-btnColor1" ">Olivia's Story</a>
-              </li>
-              <li><a href="sma-fighter-olivia-medical-history.html" class="hover:text-btnColor1">Medical History</a></li>
-              <li >
-                <a href="sma-fighter-olivia-update and progress.html" class="hover:text-btnColor1">Update & Progress</a>
-              </li>
+            <ul class="menu menu-horizontal px-1 gap-2 xl:gap-4">
               <li>
-                <a href="sma-fighter-olivia-about-sma.html" class="hover:text-btnColor1"">About SMA</a>
+                <a href="index.html" class="hover:text-btnColor1 pro-nav-link">
+                  Home
+                </a>
               </li>
-                        
-              
+
               <li>
-                <a href="sma-fighter-olivia-gallery.html" class="hover:text-btnColor1">Gallery</a>              
+                <a href="sma-fighter-olivia-story.html" class="hover:text-btnColor1 pro-nav-link">
+                  Olivia's Story
+                </a>
               </li>
-              <li><a href="sma-fighter-olivia-contact.html" class="hover:text-btnColor1">Contact </a></li>
+
+              <li>
+                <a href="sma-fighter-olivia-medical-history.html" class="hover:text-btnColor1 pro-nav-link">
+                  Medical History
+                </a>
+              </li>
+
+              <li>
+                <a href="sma-fighter-olivia-update and progress.html" class="hover:text-btnColor1 pro-nav-link">
+                  Update & Progress
+                </a>
+              </li>
+
+              <li>
+                <a href="sma-fighter-olivia-about-sma.html" class="hover:text-btnColor1 pro-nav-link">
+                  About SMA
+                </a>
+              </li>
+
+              <!-- Desktop Gallery Dropdown -->
+              <li class="relative pro-dropdown">
+                <button type="button" class="hover:text-btnColor1 pro-nav-link cursor-pointer flex items-center gap-1">
+                  Gallery
+                  <i class="fa-solid fa-angle-down text-sm ml-1 pro-dropdown-arrow"></i>
+                </button>
+
+                <ul class="pro-dropdown-menu absolute left-0 top-full mt-4 z-[9999] menu p-2 shadow-xl bg-sColor rounded-box w-56 border-t-4 border-pColor">
+                  <li>
+                    <a href="sma-fighter-olivia-photo-gallery.html" class="hover:text-btnColor1 pro-mobile-link">
+                      <i class="fa-regular fa-image"></i>
+                      Photo Gallery
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="sma-fighter-olivia-video-gallery.html" class="hover:text-btnColor1 pro-mobile-link">
+                      <i class="fa-solid fa-video"></i>
+                      Video Gallery
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="cure-sma-bd-blog.html" class="hover:text-btnColor1 pro-nav-link">
+                  Blog
+                </a>
+              </li>
+
+              <li>
+                <a href="sma-fighter-olivia-contact.html" class="hover:text-btnColor1 pro-nav-link">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
-        <!-- Donate button -->
-          <div class="flex gap-4 lg:gap-1 xl:gap-4 2xl:gap-4">
-              <div>
-                <a class="pBtn bg-btnColor1 hover:bg-btnColor2 transition duration-300 ease-in-out text-white " href="#" onclick="Gdonate_modal.showModal()"><i class="fa-solid fa-heart-circle-check"></i> <span class="text-base md:text-xl md:inline lg:hidden xl:inline">Donate</span></a>
-              </div>
-              <!-- modal information for pay donation -->
-              <dialog id="Gdonate_modal" class="modal">
-                <div class="modal-box bg-slate-200 max-w-full md:max-w-4xl lg:max-w-3xl p-6 mx-auto">
-                  <form method="dialog">
-                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                  </form>
-                  <div class="bg-pColor/50 p-6 border-4 border-btnColor1/50 rounded-lg">
-                    <h3 class="text-xl pt-3 text-green-600 text-center font-bold">WAYS TO DONATION</h3>
-                    <p class="text-center mb-5">Please send you help through the following path</p>
-
-                    <div class="border-2 border-white rounded-lg bg-white bg-opacity-25 mb-4">
-                      <p class="text-center font-bold">Mobile Banking (Send Money)</p>
-                      <p class="text-center">bKash / Nagad / Rocket: 01716912288 (1) </p>
-                      <p class="text-center mb-5">bKash / Nagad / Rocket: 01716912288 (2) </p>
-
-                      <p class="text-center font-bold">Reference:</p>
-                      <p class="text-center">Your NAME_CONTACT NO.</p>
-                    </div>
-
-                    <div class="border-2 border-white rounded-lg bg-white bg-opacity-25 mb-4">
-                      <p class="text-center font-bold">Bank Transfer</p>
-                      <div class="flex flex-col md:flex-row gap-4 p-4 justify-between">
-                        <div>
-                          <p>1</p>
-                          <p class="font-semibold">Bank: DBBL</p>
-                          <p>Name: Nabone</p>
-                          <p>First Name: Nabone</p>
-                          <p>Last Name: Nabone</p>
-                          <p>Branch: Kawranbazar</p>
-                          <p>Account No.:034980239840280</p>
-                          <p>Routing No.:39840280</p>
-                        </div>
-                        <div class="w-px bg-white"></div>
-                        <div>
-                          <p>2</p>
-                          <p class="font-semibold">Bank: City</p>
-                          <p>Name: Nabone</p>
-                          <p>First Name: Nabone</p>
-                          <p>Last Name: Nabone</p>
-                          <p>Branch: Kawranbazar</p>
-                          <p>Account No.:034980239840280</p>
-                          <p>Routing No.:39840280</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="border-2 border-white rounded-lg bg-white bg-opacity-25 mb-4">
-                      <p class="text-center font-bold">Mastercard Details</p>
-                      <div class="flex flex-col md:flex-row gap-4 p-4 justify-between">
-                        <div>
-                          <p class="font-semibold">American Mastercard</p>
-                          <p>First Name: Nabone</p>
-                          <p>Last Name: Nabone</p>
-                          <p>Card No.:034980239840280</p>
-                        </div>
-                        <div class="w-px bg-white"></div>
-                        <div>
-                          <p class="font-semibold">Paypal Mastercard</p>
-                          <p>First Name: Nabone</p>
-                          <p>Last Name: Nabone</p>
-                          <p>Card No.:034980239840280</p>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <p class="text-center font-bold mt-10 text-btnColor1">Thank you for donating me</p>
-                    <div class="max-w-full flex justify-center mb-4">
-                      <img src="./src/images/logo.png" alt="SMA Fighter Olivia" class="w-24 h-auto">
-                    </div>
-              
-                    
-                  </div>
-                </div>
-              </dialog>
+          <!-- Donate button -->
+          <div class="navbar-end flex justify-end">
+            <a class="pBtn bg-btnColor1 hover:bg-btnColor2 transition-all duration-300 ease-in-out text-white hover:-translate-y-1 hover:shadow-xl active:scale-95" href="#" onclick="Gdonate_modal.showModal()">
+              <i class="fa-solid fa-heart-circle-check"></i>
+              <span class="text-base md:text-xl md:inline lg:hidden xl:inline">Donate</span>
+            </a>
           </div>
+        </div>
+      </nav>
 
-      </div>
-    </nav>
-  </header>
+      <!-- Donate modal -->
+      <dialog id="Gdonate_modal" class="modal">
+        <div class="modal-box bg-slate-200 max-w-full md:max-w-4xl lg:max-w-3xl p-6 mx-auto">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 hover:text-btnColor1 transition-colors duration-300">
+              ✕
+            </button>
+          </form>
+
+          <div class="bg-pColor/50 p-6 border-4 border-btnColor1/50 rounded-lg">
+            <h3 class="text-xl pt-3 text-green-600 text-center font-bold">
+              WAYS TO DONATION
+            </h3>
+
+            <p class="text-center mb-5">
+              Please send your help through the following path
+            </p>
+
+            <div class="border-2 border-white rounded-lg bg-white bg-opacity-25 mb-4 p-4 transition-all duration-300 hover:shadow-lg">
+              <p class="text-center font-bold">Mobile Banking Send Money</p>
+              <p class="text-center">bKash / Nagad / Rocket: 01716912288</p>
+              <p class="text-center mb-5">bKash / Nagad / Rocket: 01716912288</p>
+
+              <p class="text-center font-bold">Reference:</p>
+              <p class="text-center">Your NAME_CONTACT NO.</p>
+            </div>
+
+            <div class="border-2 border-white rounded-lg bg-white bg-opacity-25 mb-4 transition-all duration-300 hover:shadow-lg">
+              <p class="text-center font-bold pt-4">Bank Transfer</p>
+
+              <div class="flex flex-col md:flex-row gap-4 p-4 justify-between">
+                <div class="flex-1">
+                  <p class="font-semibold">Bank: DBBL</p>
+                  <p>Name: Nabone</p>
+                  <p>First Name: Nabone</p>
+                  <p>Last Name: Nabone</p>
+                  <p>Branch: Kawranbazar</p>
+                  <p>Account No.: 034980239840280</p>
+                  <p>Routing No.: 39840280</p>
+                </div>
+
+                <div class="hidden md:block w-px bg-white"></div>
+
+                <div class="flex-1">
+                  <p class="font-semibold">Bank: City</p>
+                  <p>Name: Nabone</p>
+                  <p>First Name: Nabone</p>
+                  <p>Last Name: Nabone</p>
+                  <p>Branch: Kawranbazar</p>
+                  <p>Account No.: 034980239840280</p>
+                  <p>Routing No.: 39840280</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-2 border-white rounded-lg bg-white bg-opacity-25 mb-4 transition-all duration-300 hover:shadow-lg">
+              <p class="text-center font-bold pt-4">Mastercard Details</p>
+
+              <div class="flex flex-col md:flex-row gap-4 p-4 justify-between">
+                <div class="flex-1">
+                  <p class="font-semibold">American Mastercard</p>
+                  <p>First Name: Nabone</p>
+                  <p>Last Name: Nabone</p>
+                  <p>Card No.: 034980239840280</p>
+                </div>
+
+                <div class="hidden md:block w-px bg-white"></div>
+
+                <div class="flex-1">
+                  <p class="font-semibold">Paypal Mastercard</p>
+                  <p>First Name: Nabone</p>
+                  <p>Last Name: Nabone</p>
+                  <p>Card No.: 034980239840280</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-center font-bold mt-10 text-btnColor1">
+              Thank you for donating me
+            </p>
+
+            <div class="max-w-full flex justify-center mb-4">
+              <img src="./src/images/logo.png" alt="SMA Fighter Olivia" class="w-24 h-auto transition-transform duration-300 hover:scale-105">
+            </div>
+          </div>
+        </div>
+      </dialog>
+    </header>
   `);
 }
