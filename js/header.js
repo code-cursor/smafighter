@@ -553,8 +553,7 @@ function loadHeader() {
 
             <div class="border-2 border-white rounded-lg bg-white bg-opacity-25 mb-4 p-4 transition-all duration-300 hover:shadow-lg">
               <p class="text-center font-bold">Mobile Banking Send Money</p>
-              <p class="text-center">bKash / Nagad / Rocket: 01716912288</p>
-              <p class="text-center mb-5">bKash / Nagad / Rocket: 01716912288</p>
+              <p class="text-center">bKash / Nagad / Rocket: 01553350892</p>
 
               <p class="text-center font-bold">Reference:</p>
               <p class="text-center">Your NAME_CONTACT NO.</p>
@@ -565,18 +564,18 @@ function loadHeader() {
 
               <div class="flex flex-col md:flex-row gap-4 p-4 justify-between">
                 <div class="flex-1">
-                  <p class="font-semibold">Bank: DBBL</p>
-                  <p>Name: Nabone</p>
-                  <p>First Name: Nabone</p>
-                  <p>Last Name: Nabone</p>
-                  <p>Branch: Kawranbazar</p>
-                  <p>Account No.: 034980239840280</p>
-                  <p>Routing No.: 39840280</p>
+                  <p class="font-semibold">Bank: DBBL (Olivia’s Mothers Account)</p>
+                  <p>Name: Shahin Akter Shanu</p>
+                  <p>First Name: Shahin Akter</p>
+                  <p>Last Name: Shanu</p>
+                  <p>Branch: Shantinagar</p>
+                  <p>Account No.: 1081570018032</p>
+                  <p>Routing No.: 090276349</p>
                 </div>
 
                 <div class="hidden md:block w-px bg-white"></div>
 
-                <div class="flex-1">
+                <!-- <div class="flex-1">
                   <p class="font-semibold">Bank: City</p>
                   <p>Name: Nabone</p>
                   <p>First Name: Nabone</p>
@@ -584,11 +583,11 @@ function loadHeader() {
                   <p>Branch: Kawranbazar</p>
                   <p>Account No.: 034980239840280</p>
                   <p>Routing No.: 39840280</p>
-                </div>
+                </div> -->
               </div>
             </div>
 
-            <div class="border-2 border-white rounded-lg bg-white bg-opacity-25 mb-4 transition-all duration-300 hover:shadow-lg">
+            <!-- <div class="border-2 border-white rounded-lg bg-white bg-opacity-25 mb-4 transition-all duration-300 hover:shadow-lg">
               <p class="text-center font-bold pt-4">Mastercard Details</p>
 
               <div class="flex flex-col md:flex-row gap-4 p-4 justify-between">
@@ -607,7 +606,7 @@ function loadHeader() {
                   <p>Last Name: Nabone</p>
                   <p>Card No.: 034980239840280</p>
                 </div>
-              </div>
+              </div>  -->
             </div>
 
             <p class="text-center font-bold mt-10 text-btnColor1">
