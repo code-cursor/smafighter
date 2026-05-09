@@ -261,7 +261,7 @@ function loadBanner() {
 
             <div class="relative lg:ml-8 h-[330px] sm:h-[400px] lg:h-[430px] overflow-hidden rounded-[34px] lg:rounded-[180px_30px_30px_180px] border-[10px] border-white shadow-[0_26px_70px_rgba(72,18,52,0.2)] bg-pink-100">
               <img
-                src="../src/images/banner_image.jpg"
+                src="./src/images/banner_image.jpg"
                 alt="Olivia's photo"
                 class="w-full h-full object-cover object-center olivia-image-zoom"
               />
