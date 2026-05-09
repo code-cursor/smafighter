@@ -183,12 +183,8 @@ function loadBanner() {
               <div class="pointer-events-none absolute top-0 left-0 right-3 h-9 z-10 bg-gradient-to-b from-white to-transparent"></div>
               <div class="pointer-events-none absolute bottom-0 left-0 right-3 h-9 z-10 bg-gradient-to-t from-white to-transparent"></div>
 
-              <div
-                id="autoScrollText"
-                tabindex="0"
-                aria-label="Scrollable Olivia story"
-                class="h-full overflow-y-auto px-5 pt-5 pb-7 text-[#394150] text-[16px] sm:text-[17px] leading-[1.72] font-medium"
-              >
+              <div id="autoScrollText" tabindex="0" aria-label="Scrollable Olivia story"
+                class="h-full overflow-y-auto px-5 pt-5 pb-7 text-[#394150] text-[16px] sm:text-[17px] leading-[1.72] font-medium">
                 <p id="storyText" class="pb-8">
                   On June 20, 2021,<br>
                   Olivia Sanchari Naboni was born into our lives — a light we never imagined we would have to fight so hard to protect.<br><br>
@@ -530,7 +526,7 @@ function learnAboutSma() {
   textDiv.className = "w-full lg:w-1/2 lg:mr-16";
   textDiv.innerHTML = `
       <h1 class="text-2xl font-bold text-center mb-6 ">Learn about SMA</h1>
-      <p class="text-sm leading-normal lg:text-lg xl:leading-8 text-justify">
+      <p class="text-[16px] sm:text-[17px] leading-normal xl:leading-8 text-justify">
         Spinal Muscular Atrophy (SMA) is a rare genetic neuromuscular condition, affecting approximately 1 in 10,000 people.
         Muscle wasting and gradual mobility loss are symptoms of spinal muscular atrophy. It is brought on by degeneration of
         the nerve cells (motor neurons) that link the brain, spinal cord, and muscles of the body. The muscles used for movements 
