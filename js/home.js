@@ -465,7 +465,6 @@ function initOliviaBannerScroll() {
 
   setTimeout(startAutoScroll, 500);
 }
-
 // Banner Section end
 
 // home page reference videos
@@ -530,7 +529,7 @@ function learnAboutSma() {
   const textDiv = document.createElement("div");
   textDiv.className = "w-full lg:w-1/2 lg:mr-16";
   textDiv.innerHTML = `
-      <h1 class="text-2xl font-bold text-center mb-6 text-btnColor2">Learn about SMA</h1>
+      <h1 class="text-2xl font-bold text-center mb-6 ">Learn about SMA</h1>
       <p class="text-sm leading-normal lg:text-lg xl:leading-8 text-justify">
         Spinal Muscular Atrophy (SMA) is a rare genetic neuromuscular condition, affecting approximately 1 in 10,000 people.
         Muscle wasting and gradual mobility loss are symptoms of spinal muscular atrophy. It is brought on by degeneration of

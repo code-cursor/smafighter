@@ -36,10 +36,9 @@ function loadFooter() {
               <ul>
                 <li><a href="sma-fighter-olivia-story.html" class="text-lg font-light hover:text-white hover:underline">Olivia's Story</a></li>
                 <li><a href="sma-fighter-olivia-medical-history.html" class="text-lg font-light hover:text-white hover:underline">Medical History</a></li>
+                <li><a href="sma-fighter-olivia-executive-committee.html" class="text-lg font-light hover:text-white hover:underline">Executive Committee</a></li>
                 <li><a href="sma-fighter-olivia-update and progress.html" class="text-lg font-light hover:text-white hover:underline">Update & Progress</a></li>
-                <li><a href="sma-fighter-olivia-about-sma.html" class="text-lg font-light hover:text-white hover:underline">About SMA</a></li>
-                <li><a href="sma-fighter-olivia-gallery.html" class="text-lg font-light hover:text-white hover:underline">Olivia's Gallery</a></li>
-                <li><a href="sma-fighter-olivia-committee.html" class="text-lg font-light hover:text-white hover:underline">* Committee *</a></li>
+                <li><a href="sma-fighter-olivia-contact.html" class="text-lg font-light hover:text-white hover:underline">Contact</a></li>
               </ul>
             </div>
           </div>    
