@@ -60,17 +60,6 @@ function loadHeader() {
           width: 100%;
         }
 
-        /* Mobile menu link hover */
-        .pro-mobile-link {
-          transition: color 0.3s ease, padding-left 0.3s ease, background-color 0.3s ease;
-          border-radius: 8px;
-        }
-
-        .pro-mobile-link:hover {
-          padding-left: 18px;
-          background-color: rgba(255, 255, 255, 0.12);
-        }
-
         /* Desktop gallery dropdown animation */
         .pro-dropdown-menu {
           opacity: 0;
@@ -94,6 +83,167 @@ function loadHeader() {
         .pro-dropdown-arrow {
           transition: transform 0.3s ease;
         }
+
+        /* Mobile menu premium panel */
+        .mobile-menu-panel {
+          background:
+            radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 32%),
+            linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+        }
+
+        /* IMPORTANT: force mobile menu to one column */
+        .mobile-menu-list {
+          display: flex !important;
+          flex-direction: column !important;
+          flex-wrap: nowrap !important;
+          width: 100% !important;
+          gap: 6px;
+          padding: 12px;
+          margin: 0;
+          list-style: none;
+        }
+
+        .mobile-menu-list > li {
+          display: block !important;
+          width: 100% !important;
+        }
+
+        .mobile-menu-list a,
+        .mobile-menu-list summary {
+          width: 100% !important;
+          display: flex !important;
+          align-items: center !important;
+          gap: 12px !important;
+        }
+
+        .mobile-menu-list details {
+          width: 100% !important;
+          display: block !important;
+        }
+
+        .mobile-submenu-list {
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100% !important;
+          gap: 6px;
+          margin-top: 8px;
+          margin-left: 18px;
+          padding: 8px;
+          list-style: none;
+        }
+
+        .mobile-submenu-list li {
+          width: 100% !important;
+          display: block !important;
+        }
+
+        /* Mobile menu link */
+        .pro-mobile-link {
+          position: relative;
+          overflow: hidden;
+          min-height: 48px;
+          padding: 8px 12px !important;
+          transition:
+            color 0.3s ease,
+            padding-left 0.3s ease,
+            background-color 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+          border-radius: 14px;
+        }
+
+        .pro-mobile-link::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 4px;
+          height: 0;
+          border-radius: 999px;
+          background: currentColor;
+          transform: translateY(-50%);
+          transition: height 0.3s ease;
+        }
+
+        .pro-mobile-link:hover {
+          padding-left: 18px !important;
+          transform: translateX(4px);
+          background-color: rgba(255, 255, 255, 0.14);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .pro-mobile-link:hover::before {
+          height: 60%;
+        }
+
+        .mobile-menu-icon-box {
+          min-width: 36px;
+          width: 36px;
+          height: 36px;
+          border-radius: 14px;
+          background: rgba(255,255,255,0.18);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .mobile-submenu-icon-box {
+          min-width: 32px;
+          width: 32px;
+          height: 32px;
+          border-radius: 12px;
+          background: rgba(255,255,255,0.16);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* Hamburger animation */
+        .hamburger-line {
+          display: block;
+          width: 26px;
+          height: 2px;
+          border-radius: 999px;
+          background: currentColor;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        #mobile-menu-toggle:checked + label .line-1 {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        #mobile-menu-toggle:checked + label .line-2 {
+          opacity: 0;
+        }
+
+        #mobile-menu-toggle:checked + label .line-3 {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Remove default details marker for cleaner mobile gallery */
+        .mobile-gallery-details > summary {
+          list-style: none;
+        }
+
+        .mobile-gallery-details > summary::-webkit-details-marker {
+          display: none;
+        }
+
+        .mobile-gallery-details > summary::marker {
+          content: "";
+        }
+
+        /* Better mobile scrolling */
+        .mobile-menu-scroll::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        .mobile-menu-scroll::-webkit-scrollbar-thumb {
+          background: rgba(255,255,255,0.28);
+          border-radius: 999px;
+        }
       </style>
 
       <!-- Top header section -->
@@ -115,8 +265,7 @@ function loadHeader() {
         <!-- Top quick links -->
         <div class="flex items-center text-xs md:text-base text-center shrink-0">
           <a class="text-decoration-none px-2 md:px-3 hover:text-btnColor1 transition-colors duration-300" href="sma-fighter-olivia-medical-history.html">
-            <span class="hidden sm:inline">Medical History</span>
-            <span class="sm:hidden">Medical</span>
+            <span>Medical History</span>
           </a>
 
           <a class="text-decoration-none px-2 md:px-3 hover:text-btnColor1 transition-colors duration-300" href="sma-fighter-olivia-contact.html">
@@ -154,84 +303,147 @@ function loadHeader() {
             <div class="relative lg:hidden">
               <input id="mobile-menu-toggle" type="checkbox" class="peer hidden">
 
-              <label for="mobile-menu-toggle" role="button" class="btn btn-ghost transition-all duration-300 hover:text-btnColor1 hover:scale-110 active:scale-95" aria-label="Open or close main menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h12M4 18h16" />
-                </svg>
+              <!-- Mobile menu icon -->
+              <label for="mobile-menu-toggle" role="button" class="btn btn-ghost flex flex-col gap-[6px] text-pfont transition-all duration-300 hover:text-btnColor1 hover:scale-110 active:scale-95" aria-label="Open or close main menu">
+                <span class="hamburger-line line-1"></span>
+                <span class="hamburger-line line-2"></span>
+                <span class="hamburger-line line-3"></span>
               </label>
 
-              <ul class="absolute left-0 top-full mt-3 z-[9999] menu menu-sm p-3 bg-sColor rounded-box w-80 border-r-4 border-pColor drop-shadow-lg
-                max-h-0 opacity-0 -translate-y-2 overflow-hidden pointer-events-none
-                transition-all duration-300 ease-out
-                peer-checked:max-h-[85vh] peer-checked:opacity-100 peer-checked:translate-y-0 peer-checked:pointer-events-auto">
+              <!-- Mobile menu overlay -->
+              <label for="mobile-menu-toggle" class="fixed inset-0 z-[9990] hidden bg-black/35 backdrop-blur-[2px] peer-checked:block"></label>
 
-                <li class="border-b-2 border-pColor">
-                  <a href="index.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
-                    Home
-                  </a>
-                </li>
+              <!-- Mobile menu panel -->
+              <div class="absolute left-0 top-full mt-3 z-[9999] w-[88vw] max-w-[360px]
+                max-h-0 opacity-0 -translate-x-4 -translate-y-2 overflow-hidden pointer-events-none
+                transition-all duration-500 ease-out
+                peer-checked:max-h-[88vh] peer-checked:opacity-100 peer-checked:translate-x-0 peer-checked:translate-y-0 peer-checked:pointer-events-auto">
 
-                <li class="border-b-2 border-pColor">
-                  <a href="sma-fighter-olivia-story.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
-                    Olivia's Story
-                  </a>
-                </li>
+                <div class="mobile-menu-panel bg-sColor border border-pColor/40 border-r-4 border-r-pColor rounded-3xl shadow-2xl overflow-hidden">
+                  
+                  <!-- Mobile menu top branding -->
+                  <div class="bg-pColor/70 px-4 py-4 border-b border-white/20">
+                    <div class="flex items-center gap-3">
+                      <div class="h-12 w-12 rounded-2xl bg-white/20 flex items-center justify-center shadow-md">
+                        <img src="./src/images/logo.png" alt="SMA Fighter Olivia" class="w-10 h-auto">
+                      </div>
 
-                <li class="border-b-2 border-pColor">
-                  <a href="sma-fighter-olivia-medical-history.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
-                    Medical History
-                  </a>
-                </li>
+                      <div>
+                        <p class="text-sm opacity-80 leading-none">Welcome to</p>
+                        <h3 class="text-lg font-bold leading-tight">SMA Fighter Olivia</h3>
+                      </div>
+                    </div>
+                  </div>
 
-                <li class="border-b-2 border-pColor">
-                  <a href="sma-fighter-olivia-update and progress.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
-                    Update & Progress
-                  </a>
-                </li>
-
-                <li class="border-b-2 border-pColor">
-                  <a href="sma-fighter-olivia-about-sma.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
-                    About SMA
-                  </a>
-                </li>
-
-                <!-- Mobile Gallery Dropdown -->
-                <li class="border-b-2 border-pColor">
-                  <details>
-                    <summary class="text-lg hover:text-btnColor1 pro-mobile-link cursor-pointer">
-                      Gallery
-                    </summary>
-
-                    <ul class="p-2 bg-sColor">
+                  <!-- Mobile menu links -->
+                  <div class="mobile-menu-scroll max-h-[68vh] overflow-y-auto bg-transparent">
+                    <ul class="mobile-menu-list">
                       <li>
-                        <a href="sma-fighter-olivia-photo-gallery.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base hover:text-btnColor1 pro-mobile-link">
-                          <i class="fa-regular fa-image"></i>
-                          Photo Gallery
+                        <a href="index.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
+                          <span class="mobile-menu-icon-box">
+                            <i class="fa-solid fa-house"></i>
+                          </span>
+                          <span>Home</span>
                         </a>
                       </li>
 
                       <li>
-                        <a href="sma-fighter-olivia-video-gallery.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base hover:text-btnColor1 pro-mobile-link">
-                          <i class="fa-solid fa-video"></i>
-                          Video Gallery
+                        <a href="sma-fighter-olivia-story.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
+                          <span class="mobile-menu-icon-box">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                          </span>
+                          <span>Olivia's Story</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="sma-fighter-olivia-medical-history.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
+                          <span class="mobile-menu-icon-box">
+                            <i class="fa-solid fa-users-gear"></i>
+                          </span>
+                          <span>Executive Committee</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="sma-fighter-olivia-medical-history.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
+                          <span class="mobile-menu-icon-box">
+                            <i class="fa-solid fa-user-doctor"></i>
+                          </span>
+                          <span>Health Provider</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="sma-fighter-olivia-update and progress.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
+                          <span class="mobile-menu-icon-box">
+                            <i class="fa-solid fa-chart-line"></i>
+                          </span>
+                          <span>Update & Progress</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="sma-fighter-olivia-about-sma.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
+                          <span class="mobile-menu-icon-box">
+                            <i class="fa-solid fa-dna"></i>
+                          </span>
+                          <span>About SMA</span>
+                        </a>
+                      </li>
+
+                      <!-- Mobile Gallery Dropdown -->
+                      <li>
+                        <details class="mobile-gallery-details">
+                          <summary class="text-base font-semibold hover:text-btnColor1 pro-mobile-link cursor-pointer">
+                            <span class="mobile-menu-icon-box">
+                              <i class="fa-solid fa-images"></i>
+                            </span>
+                            <span>Gallery</span>
+                          </summary>
+
+                          <ul class="mobile-submenu-list rounded-2xl bg-pColor/25 border-l-4 border-btnColor1">
+                            <li>
+                              <a href="sma-fighter-olivia-photo-gallery.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-sm font-medium hover:text-btnColor1 pro-mobile-link">
+                                <span class="mobile-submenu-icon-box">
+                                  <i class="fa-regular fa-image"></i>
+                                </span>
+                                <span>Photo Gallery</span>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="sma-fighter-olivia-video-gallery.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-sm font-medium hover:text-btnColor1 pro-mobile-link">
+                                <span class="mobile-submenu-icon-box">
+                                  <i class="fa-solid fa-video"></i>
+                                </span>
+                                <span>Video Gallery</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </details>
+                      </li>
+
+                      <li>
+                        <a href="cure-sma-bd-blog.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
+                          <span class="mobile-menu-icon-box">
+                            <i class="fa-solid fa-blog"></i>
+                          </span>
+                          <span>Blog</span>
                         </a>
                       </li>
                     </ul>
-                  </details>
-                </li>
+                  </div>
 
-                <li class="border-b-2 border-pColor">
-                  <a href="cure-sma-bd-blog.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
-                    Blog
-                  </a>
-                </li>
-
-                <li>
-                  <a href="sma-fighter-olivia-contact.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-lg hover:text-btnColor1 pro-mobile-link">
-                    Contact
-                  </a>
-                </li>
-              </ul>
+                  <!-- Mobile menu bottom CTA -->
+                  <div class="p-4 border-t border-white/20 bg-pColor/35">
+                    <a href="#" onclick="document.getElementById('mobile-menu-toggle').checked=false; Gdonate_modal.showModal();" class="w-full flex items-center justify-center gap-2 rounded-2xl bg-btnColor1 hover:bg-btnColor2 text-white font-bold py-3 shadow-lg transition-all duration-300 hover:-translate-y-1 active:scale-95">
+                      <i class="fa-solid fa-heart-circle-check"></i>
+                      Donate for Olivia
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- Site logo -->
@@ -257,7 +469,13 @@ function loadHeader() {
 
               <li>
                 <a href="sma-fighter-olivia-medical-history.html" class="hover:text-btnColor1 pro-nav-link">
-                  Medical History
+                  Executive Committee
+                </a>
+              </li>
+
+              <li>
+                <a href="sma-fighter-olivia-medical-history.html" class="hover:text-btnColor1 pro-nav-link">
+                  Health Provider
                 </a>
               </li>
 
@@ -300,12 +518,6 @@ function loadHeader() {
               <li>
                 <a href="cure-sma-bd-blog.html" class="hover:text-btnColor1 pro-nav-link">
                   Blog
-                </a>
-              </li>
-
-              <li>
-                <a href="sma-fighter-olivia-contact.html" class="hover:text-btnColor1 pro-nav-link">
-                  Contact
                 </a>
               </li>
             </ul>
