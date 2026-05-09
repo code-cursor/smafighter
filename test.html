@@ -52,39 +52,47 @@
     <style>
       /* primary button */
       .pBtn {
-        font-family: 'poppins', 'sans-serif';
+        font-family: "poppins", "sans-serif";
         color: #222222;
-        background-color: #FFD600;
-        border-radius: 0.5rem; 
-        font-size: 1.25rem; 
-        padding: 8px 8px 8px 8px;
+        background-color: #ffd600;
+        border-radius: 0.5rem;
+        font-size: 1.25rem;
+        padding: 8px;
         font-weight: 500;
         transition: background-color 1s ease;
-    }
-    .pBtn:hover {
-      background-color: #f7a072;
-      color: white;
-      box-shadow: box-shadow: 0px 0px 13px 0px rgba(255,214,0,1);
-                  -webkit-box-shadow: 0px 0px 13px 0px rgba(255,214,0,1);
-                  -moz-box-shadow: 0px 0px 13px 0px rgba(255,214,0,1);
-    }
-    .custom-hr {
-      border: 0;
-      height: 1px;
-      background: #f7a072;
-      margin: 2px 0px 2px 0px; /* Adjust margin as needed */
-    }
-    .menu :where(li:not(.menu-title) > :not(ul,details,.menu-title,.btn)), .menu :where(li:not(.menu-title) > details > summary:not(.menu-title)){
-      padding-left:.75rem;
-      padding-right: .75rem;
-    }
-    .banner-bgw{
-      background: rgb(255,255,255);
-      background: linear-gradient(184deg, rgba(255,255,255,0.31976540616246496) 0%, rgba(255,255,255,0) 100%);
-    }
+      }
 
-    /* style for google translate */
-    /* Hide Google logo/link only */
+      .pBtn:hover {
+        background-color: #f7a072;
+        color: white;
+        box-shadow: 0px 0px 13px 0px rgba(255, 214, 0, 1);
+        -webkit-box-shadow: 0px 0px 13px 0px rgba(255, 214, 0, 1);
+        -moz-box-shadow: 0px 0px 13px 0px rgba(255, 214, 0, 1);
+      }
+
+      .custom-hr {
+        border: 0;
+        height: 1px;
+        background: #f7a072;
+        margin: 2px 0px;
+      }
+
+      .menu :where(li:not(.menu-title) > :not(ul, details, .menu-title, .btn)),
+      .menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+
+      .banner-bgw {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          184deg,
+          rgba(255, 255, 255, 0.31976540616246496) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+
+      /* style for google translate */
       .goog-logo-link {
         display: none !important;
       }
@@ -94,19 +102,578 @@
       }
 
       .goog-te-gadget {
-        color: transparent !important; /* Hide default "Translate" text */
+        color: transparent !important;
       }
 
-      /* Style the actual dropdown */
       .goog-te-combo {
-        font-size: 0.875rem !important; /* Tailwind text-sm */
+        font-size: 0.875rem !important;
         padding: 0.25rem 0.75rem;
-        border-radius: 0.375rem; /* rounded-md */
-        border: 1px solid #d1d5db; /* Tailwind border-gray-300 */
+        border-radius: 0.375rem;
+        border: 1px solid #d1d5db;
         background-color: #fff;
-        color: #111827; /* Tailwind gray-900 */
+        color: #111827;
         outline: none;
         cursor: pointer;
+      }
+
+      /* =========================
+         Safe Fallback Header/Footer
+         These are only shown if js/header.js or js/footer.js is missing
+         ========================= */
+      .fallback-header,
+      .fallback-footer {
+        width: min(1420px, calc(100% - 28px));
+        margin: 0 auto;
+      }
+
+      .fallback-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 18px 8px 10px;
+      }
+
+      .fallback-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #24104a;
+        font-size: 20px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .fallback-logo-icon {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        color: #fff;
+        background: linear-gradient(135deg, #ec4899, #db2777);
+        box-shadow: 0 10px 22px rgba(236, 72, 153, 0.24);
+      }
+
+      .fallback-nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-weight: 600;
+      }
+
+      .fallback-nav a {
+        color: #4b365e;
+        text-decoration: none;
+        transition: color 0.25s ease;
+      }
+
+      .fallback-nav a:hover {
+        color: #db2777;
+      }
+
+      .fallback-footer {
+        margin-top: 22px;
+        padding: 24px 8px 38px;
+        color: #6b536c;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      /* =========================
+         New Hero Section CSS
+         ========================= */
+      .olivia-hero-section {
+        position: relative;
+        width: min(1420px, calc(100% - 28px));
+        margin: 18px auto 36px;
+        min-height: 520px;
+        overflow: hidden;
+        border-radius: 18px;
+        background:
+          radial-gradient(circle at 18% 12%, rgba(255, 214, 230, 0.88), transparent 30%),
+          radial-gradient(circle at 88% 20%, rgba(255, 157, 196, 0.42), transparent 34%),
+          linear-gradient(110deg, #fffafb 0%, #fff6fa 52%, #ffe6f0 100%);
+        border: 1px solid #ffd2e3;
+        box-shadow: 0 22px 70px rgba(226, 42, 115, 0.16);
+      }
+
+      .olivia-hero-section::before,
+      .olivia-hero-section::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        pointer-events: none;
+      }
+
+      .olivia-hero-section::before {
+        width: 520px;
+        height: 520px;
+        right: -135px;
+        top: -95px;
+        background: rgba(237, 65, 134, 0.14);
+        animation: softPulse 5s ease-in-out infinite;
+      }
+
+      .olivia-hero-section::after {
+        width: 360px;
+        height: 360px;
+        right: 220px;
+        bottom: -210px;
+        background: rgba(249, 168, 212, 0.2);
+        animation: softPulse 6.5s ease-in-out infinite reverse;
+      }
+
+      .olivia-hero-wrapper {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1.02fr 0.98fr;
+        gap: 34px;
+        min-height: 520px;
+        align-items: center;
+        padding: 52px 54px;
+      }
+
+      .olivia-hero-content {
+        max-width: 650px;
+        animation: fadeUp 0.9s ease both;
+      }
+
+      .olivia-top-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 16px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ec4899, #db2777);
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        box-shadow: 0 12px 24px rgba(236, 72, 153, 0.26);
+      }
+
+      .olivia-top-label .heart-icon {
+        font-size: 15px;
+        animation: heartBeat 1.5s ease-in-out infinite;
+      }
+
+      .olivia-hero-title {
+        margin-top: 24px;
+        font-size: 52px;
+        line-height: 0.98;
+        letter-spacing: -2.2px;
+        font-weight: 700;
+        color: #24104a;
+      }
+
+      .olivia-hero-subtitle {
+        margin-top: 16px;
+        color: #ec4899;
+        font-family: "Brush Script MT", "Segoe Script", cursive;
+        font-size: 40px;
+        line-height: 1;
+        font-weight: 400;
+      }
+
+      .olivia-text-scroll-card {
+        position: relative;
+        margin-top: 22px;
+        width: min(100%, 650px);
+        height: 170px;
+        overflow: hidden;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(236, 72, 153, 0.18);
+        box-shadow:
+          inset 0 -18px 25px rgba(255, 255, 255, 0.68),
+          0 16px 40px rgba(219, 39, 119, 0.08);
+        backdrop-filter: blur(12px);
+      }
+
+      .olivia-text-scroll-card::before,
+      .olivia-text-scroll-card::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 12px;
+        height: 34px;
+        z-index: 3;
+        pointer-events: none;
+      }
+
+      .olivia-text-scroll-card::before {
+        top: 0;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0));
+      }
+
+      .olivia-text-scroll-card::after {
+        bottom: 0;
+        background: linear-gradient(to top, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0));
+      }
+
+      .olivia-scroll-content {
+        height: 100%;
+        overflow-y: auto;
+        padding: 22px 20px 22px 22px;
+        scroll-behavior: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #ec4899 #ffe4ef;
+      }
+
+      .olivia-scroll-content::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .olivia-scroll-content::-webkit-scrollbar-track {
+        background: #ffe4ef;
+        border-radius: 999px;
+      }
+
+      .olivia-scroll-content::-webkit-scrollbar-thumb {
+        background: linear-gradient(#ec4899, #db2777);
+        border-radius: 999px;
+      }
+
+      .olivia-scroll-content p {
+        padding-bottom: 26px;
+        color: #394150;
+        font-size: 17px;
+        line-height: 1.72;
+        font-weight: 500;
+      }
+
+      .olivia-scroll-hint {
+        position: absolute;
+        right: 18px;
+        bottom: 12px;
+        z-index: 4;
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: rgba(236, 72, 153, 0.1);
+        color: #db2777;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .olivia-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 30px;
+      }
+
+      .olivia-btn {
+        min-width: 178px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        padding: 16px 24px;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 800;
+        transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+      }
+
+      .olivia-btn-primary {
+        color: #ffffff;
+        background: linear-gradient(135deg, #ec4899, #db2777);
+        box-shadow: 0 16px 28px rgba(236, 72, 153, 0.28);
+      }
+
+      .olivia-btn-secondary {
+        color: #db2777;
+        background: rgba(255, 255, 255, 0.52);
+        border: 1px solid rgba(236, 72, 153, 0.36);
+      }
+
+      .olivia-btn:hover {
+        transform: translateY(-4px);
+      }
+
+      .olivia-btn-primary:hover {
+        box-shadow: 0 22px 36px rgba(236, 72, 153, 0.36);
+      }
+
+      .olivia-hero-image-area {
+        position: relative;
+        min-height: 430px;
+        animation: fadeScale 1s ease 0.12s both;
+      }
+
+      .olivia-image-back-shape {
+        position: absolute;
+        inset: 8px -22px 2px 54px;
+        border-radius: 56% 18% 20% 50%;
+        background: linear-gradient(135deg, rgba(244, 114, 182, 0.22), rgba(219, 39, 119, 0.72));
+        transform: rotate(-3deg);
+        animation: floatShape 6s ease-in-out infinite;
+      }
+
+      .olivia-photo-frame {
+        position: relative;
+        margin-left: 34px;
+        overflow: hidden;
+        border-radius: 180px 30px 30px 180px;
+        border: 10px solid rgba(255, 255, 255, 0.96);
+        box-shadow: 0 26px 70px rgba(72, 18, 52, 0.2);
+        height: 430px;
+        background: #ffe2ef;
+      }
+
+      .olivia-photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: scale(1.03);
+        animation: imageZoom 12s ease-in-out infinite alternate;
+      }
+
+      .olivia-support-badge {
+        position: absolute;
+        left: 0;
+        bottom: 42px;
+        width: 178px;
+        height: 178px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: #ffffff;
+        background: linear-gradient(145deg, #f472b6, #db2777);
+        border: 8px solid #ffffff;
+        box-shadow: 0 18px 42px rgba(219, 39, 119, 0.28);
+        animation: badgeFloat 3.5s ease-in-out infinite;
+      }
+
+      .olivia-support-badge span {
+        display: block;
+        font-size: 36px;
+        margin-bottom: 8px;
+      }
+
+      .olivia-support-badge strong {
+        display: block;
+        font-size: 19px;
+        line-height: 1.14;
+      }
+
+      .olivia-floating-heart {
+        position: absolute;
+        color: #ec4899;
+        font-size: 34px;
+        opacity: 0.82;
+        animation: floatHeart 4.4s ease-in-out infinite;
+        z-index: 3;
+      }
+
+      .olivia-heart-one {
+        right: 34px;
+        top: 34px;
+      }
+
+      .olivia-heart-two {
+        left: 115px;
+        top: 76px;
+        font-size: 42px;
+        animation-delay: 0.7s;
+      }
+
+      .olivia-heart-three {
+        right: 160px;
+        bottom: 38px;
+        font-size: 26px;
+        animation-delay: 1.2s;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeScale {
+        from {
+          opacity: 0;
+          transform: scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes heartBeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        35% {
+          transform: scale(1.24);
+        }
+        65% {
+          transform: scale(0.95);
+        }
+      }
+
+      @keyframes softPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+        50% {
+          transform: scale(1.08);
+          opacity: 1;
+        }
+      }
+
+      @keyframes floatShape {
+        0%,
+        100% {
+          transform: rotate(-3deg) translateY(0);
+        }
+        50% {
+          transform: rotate(-1deg) translateY(-12px);
+        }
+      }
+
+      @keyframes imageZoom {
+        from {
+          transform: scale(1.03);
+        }
+        to {
+          transform: scale(1.09);
+        }
+      }
+
+      @keyframes badgeFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      @keyframes floatHeart {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-6deg);
+        }
+        50% {
+          transform: translateY(-16px) rotate(8deg);
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .olivia-hero-wrapper {
+          grid-template-columns: 1fr;
+          padding: 44px 32px;
+        }
+
+        .olivia-hero-content {
+          max-width: 100%;
+        }
+
+        .olivia-text-scroll-card {
+          width: 100%;
+        }
+
+        .olivia-hero-image-area {
+          min-height: 400px;
+        }
+
+        .olivia-photo-frame {
+          margin-left: 0;
+          height: 400px;
+          border-radius: 34px;
+        }
+
+        .olivia-support-badge {
+          left: 24px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .fallback-header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .fallback-nav {
+          flex-wrap: wrap;
+          gap: 12px;
+          font-size: 14px;
+        }
+
+        .olivia-hero-section {
+          width: min(100% - 18px, 1420px);
+          margin-top: 12px;
+          border-radius: 16px;
+        }
+
+        .olivia-hero-wrapper {
+          padding: 32px 18px;
+          gap: 28px;
+        }
+
+        .olivia-hero-title {
+          letter-spacing: -1.1px;
+        }
+
+        .olivia-text-scroll-card {
+          height: 190px;
+        }
+
+        .olivia-scroll-content p {
+          font-size: 15.5px;
+          line-height: 1.68;
+        }
+
+        .olivia-hero-actions {
+          gap: 12px;
+        }
+
+        .olivia-btn {
+          width: 100%;
+        }
+
+        .olivia-hero-image-area {
+          min-height: 360px;
+        }
+
+        .olivia-photo-frame {
+          height: 330px;
+        }
+
+        .olivia-support-badge {
+          width: 140px;
+          height: 140px;
+          bottom: 20px;
+          border-width: 6px;
+        }
+
+        .olivia-support-badge span {
+          font-size: 28px;
+        }
+
+        .olivia-support-badge strong {
+          font-size: 15px;
+        }
+
+        .olivia-heart-two,
+        .olivia-heart-three {
+          display: none;
+        }
       }
     </style>
 </head>
@@ -119,20 +686,106 @@
   <!-- Google Translate Dropdown Container -->
   <script src="js/header.js"></script>    
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+     
 
-  <main>
-    <!-- breadcrumbs -->
-    <div class="breadcrumbs text-lg bg-pColor text-white px-8 py-0 ">
-      <ul>
-        <li><a class="underline" href="index.html">Home</a></li>
-        <li><a>Health Care Team</a></li>
-      </ul>
-    </div>
+        <!-- =========================
+         New Hero Section Start
+         ========================= -->
+    <main>
+      <section class="olivia-hero-section" aria-label="Olivia charity hero section">
+        <div class="olivia-hero-wrapper">
+          <div class="olivia-hero-content">
+            <div class="olivia-top-label">
+              <span class="heart-icon">♥</span>
+              “For one small life, we ask the world.”
+            </div>
 
-    
-  
-    
-</html>
+            <h1 class="olivia-hero-title">Olivia’s Fight is Our Fight</h1>
+            <div class="olivia-hero-subtitle">Hope. Strength. Cure. ♡</div>
+
+            <div class="olivia-text-scroll-card">
+              <div
+                class="olivia-scroll-content"
+                id="autoScrollText"
+                tabindex="0"
+                aria-label="Scrollable Olivia story"
+              >
+                <p id="storyText">
+                  On June 20, 2021,<br>
+                  Olivia Sanchari Naboni was born into our lives — a light we never imagined we would have to fight so hard to protect.<br><br>
+
+                  Today, she is a 5-year-old warrior living with Spinal Muscular Atrophy (SMA) Type 1 — a rare and life-threatening genetic disease that weakens her muscles every day.<br><br>
+
+                  But her spirit? Unbreakable.<br><br>
+
+                  Olivia has memorized over 200 songs.<br>
+                  She knows colors, countries, continents, and maps.<br>
+                  She asks questions. She laughs. She dreams.<br><br>
+
+                  Yet each day depends on continuous medical care —<br>
+                  Life-saving medication, therapy, respiratory monitoring, and international specialist follow-ups.<br><br>
+
+                  There is no specialized SMA center in Bangladesh.<br>
+                  No insurance coverage.<br>
+                  Only a family fighting relentlessly — and hoping the world will stand with them.<br><br>
+
+                  This website is more than a fundraising platform.<br>
+                  It is a call to protect a child’s future.<br>
+                  It is a testament to courage.<br>
+                  It is an invitation to compassion.<br><br>
+
+                  Your support means:<br>
+                  Another step.<br>
+                  Another breath.<br>
+                  Another song.<br>
+                  Another tomorrow.<br><br>
+
+                  We believe bodies may weaken — but dreams should not.<br><br>
+                  Join us in giving Olivia the chance to grow, to sing, and one day, to walk freely.<br><br>
+                  Because this fight is not just hers.<br>
+                  It belongs to all of us.<br>
+                </p>
+              </div>
+              <div class="olivia-scroll-hint" id="scrollHint">Auto reading</div>
+            </div>
+
+            <div class="olivia-hero-actions">
+              <button class="olivia-btn olivia-btn-primary" type="button" onclick="openDonationModal(event)">
+                <i class="fa-solid fa-heart"></i> Donate Now
+              </button>
+              <a href="sma-fighter-olivia-story.html" class="olivia-btn olivia-btn-secondary inline-flex items-center justify-center gap-2">
+                <i class="fa-solid fa-book-open"></i> Learn Olivia’s Story
+              </a>
+            </div>
+          </div>
+
+          <div class="olivia-hero-image-area">
+            <div class="olivia-image-back-shape"></div>
+            <div class="olivia-floating-heart olivia-heart-one">♡</div>
+            <div class="olivia-floating-heart olivia-heart-two">♡</div>
+            <div class="olivia-floating-heart olivia-heart-three">♡</div>
+
+            <div class="olivia-photo-frame">
+              <!-- Suggested image example. Replace this URL with your real Olivia image path, for example: ./src/images/olivia-hero.jpg -->
+              <img
+                src=".\src\images\banner_image.jpg"
+                alt="Smiling child holding a teddy bear"
+              />
+            </div>
+
+            <div class="olivia-support-badge">
+              <div>
+                <span><i class="fa-regular fa-heart"></i></span>
+                <strong>Your<br />Support<br />Brings Hope<br />to Olivia</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- =========================
+         New Hero Section End
+         ========================= -->
 
 
     <!-- social share for body position -->
@@ -151,11 +804,146 @@
     <!-- general donation fixed button -->
     <div class="fixed top-1/2 left-0 transform -translate-y-1/2 mt-6  drop-shadow-xl transform transition duration-300 hover:scale-125 hover:translate-x-2 ease-in-out duration-1000">
       <div class="text-center bg-white/40 rounded-r-lg hover:text-pColor hover:bg-yellow-100/50 hover:border-pColor ease-in-out duration-30 text-center px-1 pt-2 text-red-500 border-r-4 border-t-2 border-b-2 border-lg border-red-500 ease-in-out duration-1000">
-        <a class="text-md font-bold" href="#" onclick="Gdonate_modal.showModal()"><p class="text-4xl"><i class="fa-solid fa-hand-holding-heart fa-beat"></i></p><span class="hidden md:inline">Save Us</span></a>    
+        <a class="text-md font-bold" href="#" onclick="Gdonate_modal.showModal()">
+          <p class="text-4xl"><i class="fa-solid fa-hand-holding-heart fa-beat"></i></p>
+          <span class="hidden md:inline">Save Me</span>
+        </a>    
       </div>
     </div>
     
-  </main>
+    <!-- Hero auto-scroll JS + safe test checks -->
+    <script>
+      (function () {
+        const SCROLL_DURATION_SECONDS = 90;
+        const SCROLL_START_DELAY_MS = 10000; // 10 seconds delay
+        const BOTTOM_PAUSE_MS = 4200;
+        const STEP_TIME_MS = 30;
+
+        const scrollBox = document.getElementById("autoScrollText");
+        const storyText = document.getElementById("storyText");
+        const scrollHint = document.getElementById("scrollHint");
+
+        let autoScrollTimer = null;
+        let autoScrollStartDelay = null;
+        let isPaused = false;
+
+        window.openDonationModal = function (event) {
+          if (event) event.preventDefault();
+
+          if (
+            window.Gdonate_modal &&
+            typeof window.Gdonate_modal.showModal === "function"
+          ) {
+            window.Gdonate_modal.showModal();
+            return;
+          }
+
+          const donateSection = document.querySelector("#donate, [data-donate-section]");
+          if (donateSection) {
+            donateSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            return;
+          }
+
+          console.info(
+            "Donation modal is not available. Add Gdonate_modal.showModal() or a #donate section."
+          );
+        };
+
+        function clearAutoScroll() {
+          if (autoScrollTimer) {
+            clearInterval(autoScrollTimer);
+            autoScrollTimer = null;
+          }
+
+          if (autoScrollStartDelay) {
+            clearTimeout(autoScrollStartDelay);
+            autoScrollStartDelay = null;
+          }
+        }
+
+        function updateHint(text) {
+          if (scrollHint) {
+            scrollHint.textContent = text;
+          }
+        }
+
+        function startAutoScroll() {
+          clearAutoScroll();
+
+          if (!scrollBox || !storyText || !scrollHint) return;
+
+          scrollBox.scrollTop = 0;
+
+          const maxScroll = scrollBox.scrollHeight - scrollBox.clientHeight;
+
+          if (maxScroll <= 0) {
+            updateHint("Full text visible");
+            return;
+          }
+
+          updateHint(`Scrolling starts in ${SCROLL_START_DELAY_MS / 1000}s`);
+
+          function scrollDown() {
+            const currentMaxScroll = scrollBox.scrollHeight - scrollBox.clientHeight;
+            const scrollDurationMs = SCROLL_DURATION_SECONDS * 1000;
+            const scrollStep = currentMaxScroll / (scrollDurationMs / STEP_TIME_MS);
+
+            updateHint(`${SCROLL_DURATION_SECONDS}s readable auto scroll`);
+
+            autoScrollTimer = setInterval(() => {
+              if (isPaused) return;
+
+              const latestMaxScroll = scrollBox.scrollHeight - scrollBox.clientHeight;
+
+              if (scrollBox.scrollTop >= latestMaxScroll - 1) {
+                clearAutoScroll();
+
+                autoScrollStartDelay = setTimeout(() => {
+                  if (!isPaused) {
+                    scrollBox.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+
+                  updateHint(`Scrolling starts in ${SCROLL_START_DELAY_MS / 1000}s`);
+
+                  autoScrollStartDelay = setTimeout(scrollDown, SCROLL_START_DELAY_MS);
+                }, BOTTOM_PAUSE_MS);
+
+                return;
+              }
+
+              scrollBox.scrollTop += scrollStep;
+            }, STEP_TIME_MS);
+          }
+
+          autoScrollStartDelay = setTimeout(scrollDown, SCROLL_START_DELAY_MS);
+        }
+
+        if (scrollBox && scrollHint) {
+          scrollBox.addEventListener("mouseenter", () => {
+            isPaused = true;
+            updateHint("Paused");
+          });
+
+          scrollBox.addEventListener("mouseleave", () => {
+            isPaused = false;
+            updateHint(`${SCROLL_DURATION_SECONDS}s readable auto scroll`);
+          });
+
+          scrollBox.addEventListener("focus", () => {
+            isPaused = true;
+            updateHint("Paused");
+          });
+
+          scrollBox.addEventListener("blur", () => {
+            isPaused = false;
+            updateHint(`${SCROLL_DURATION_SECONDS}s readable auto scroll`);
+          });
+        }
+
+        window.addEventListener("load", startAutoScroll);
+        window.addEventListener("resize", startAutoScroll);
+      })();
+    </script>
 
   
   <script src="js/footer.js"></script>
