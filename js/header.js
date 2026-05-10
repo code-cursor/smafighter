@@ -258,7 +258,7 @@ function loadHeader() {
 
           <a class="text-decoration-none hover:text-btnColor1 transition-colors duration-300" href="tel:+8801716912288">
             <i class="fas fa-phone"></i>
-            <span class="hidden md:inline">&nbsp;+880 1716-912288/span>
+            <span class="hidden md:inline">&nbsp;+880 1716-912288</span>
           </a>
         </div>
 
