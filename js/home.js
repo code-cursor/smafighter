@@ -265,8 +265,8 @@ function loadBanner() {
 
             <div class="absolute left-6 lg:left-0 bottom-5 lg:bottom-10 w-[140px] h-[140px] lg:w-[178px] lg:h-[178px] rounded-full grid place-items-center text-center text-white bg-gradient-to-br from-pink-400 to-pink-700 border-[6px] lg:border-8 border-white shadow-[0_18px_42px_rgba(219,39,119,0.28)] olivia-badge-float">
               <div>
-                <span class="block text-[28px] lg:text-[36px] mb-1">♡</span>
-                <strong class="text-[12px] lg:text-[18px] leading-tight">
+                <span class="block text-[28px] lg:text-[36px]">♡</span>
+                <strong class="block text-[15px] lg:text-[19px] leading-tight">
                   Your<br />
                   Support<br />
                   Brings Hope<br />
