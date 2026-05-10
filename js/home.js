@@ -240,7 +240,7 @@ function loadBanner() {
               </button>
 
               <a
-                href="#olivia-story"
+                href="sma-fighter-olivia-story.html"
                 class="min-w-[178px] inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/60 border border-pink-400/40 text-pink-700 font-bold transition duration-300 hover:-translate-y-1"
               >
                 <i class="fa-solid fa-book-open"></i> Learn Olivia’s Story
