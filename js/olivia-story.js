@@ -12,7 +12,7 @@
       title: "The Beginning of Olivia’s Fight",
       pageLabel: "Page 02",
       paragraphs: [
-        "20 June 2021. <br> Our home was filled with light when little Olivia Sanchari Naboni was born. As we looked into her eyes for the first time, we believed the world would become a more beautiful place because of her. But fate had already written the most difficult chapter of our lives.<br><br> At just 26 days old, we began noticing something unusual. A baby who was supposed to grow stronger day by day seemed to be gradually losing strength. What followed was a frantic rush—doctors, tests, reports. An unequal race against time. With urgent passport processing and hearts full of fear, we traveled in October 2021 to Apollo Hospital, Chennai.<br><br> In the first week of November, that word arrived—the word that stopped our world:<br> SMA Type 1 (Spinal Muscular Atrophy Type 1). <br><br>That day, returning from the hospital to our hotel room, we held Olivia tightly in our arms and cried for a long time. The future seemed completely covered in darkness. Yet, that very night, a small light flickered within the darkness. That evening, we had an online meeting with representatives of Roche Bangladesh Limited. In that single meeting, they said:<br><br>“Please return to the country. Let us sit together and talk.”<br><br>Within two days, we returned home. A series of meetings, discussions, and evaluations began. They understood our family reality, our social context, and our human struggle. Beyond medicine, they extended a hand of support to help build an entire SMA community."
+        "<strong>20 June 2021.</strong> <br> Our home was filled with light when little Olivia Sanchari Naboni was born. As we looked into her eyes for the first time, we believed the world would become a more beautiful place because of her. But fate had already written the most difficult chapter of our lives.<br><br> <strong>At just 26 days old,</strong> we began noticing something unusual. A baby who was supposed to grow stronger day by day seemed to be gradually losing strength. What followed was a frantic rush—doctors, tests, reports. An unequal race against time. With urgent passport processing and hearts full of fear, we traveled in October 2021 to Apollo Hospital, Chennai.<br><br> In the first week of November, that word arrived—the word that stopped our world:<br> <strong>Type 1 (Spinal Muscular Atrophy Type 1).</strong> <br><br>That day, returning from the hospital to our hotel room, we held Olivia tightly in our arms and cried for a long time. The future seemed completely covered in darkness. Yet, that very night, a small light flickered within the darkness. That evening, we had an online meeting with representatives of Roche Bangladesh Limited. In that single meeting, they said:<br><br>“Please return to the country. Let us sit together and talk.”<br><br>Within two days, we returned home. A series of meetings, discussions, and evaluations began. They understood our family reality, our social context, and our human struggle. Beyond medicine, they extended a hand of support to help build an entire SMA community."
       ],
       images: [
         {
@@ -23,11 +23,10 @@
     },
     {
       type: "story",
-      title: "Early Symptoms",
+      title: "",
       pageLabel: "Page 03",
       paragraphs: [
-        "We could identify some symptoms when our Nabonee was only 25 days old. As our first child died with the same symptoms, we were very aware and careful about Nobonee.",
-        "We immediately went to the hospital and the physicians suspected that she had SMA. We then went to India and had genetic tests. The results confirmed that Nabonee was suffering from the most critical type of SMA, Type 1.",
+        "From January to March 2022, those three months were a daily battle with death. Olivia’s body was weakening rapidly. <strong>Every morning began with fear—will she survive today?</strong> <br> <br> Finally came that defining moment—20 March 2022.<br>  After five months of relentless effort, Olivia began receiving the oral medicine Risdiplam.<br> <br>  And right then—Olivia became a shining example before our eyes.<br>  A child who was about to fade away slowly began to spread light again.<br> <br> <strong>In Bangladesh,</strong> there are no trained physicians for SMA treatment, no experienced physiotherapists. Those who are present lack neither sincerity nor compassion, but due to insufficient training, they are often unable to take necessary measures. As a result, every 3–4 months we must travel to India, seeking guidance from experienced physicians and trained physiotherapists. Along with this comes limitless expenses, mental stress, and uncertainty. There is no health insurance, no government or institutional financial support.",
       ],
       images: [
         {
@@ -38,11 +37,10 @@
     },
     {
       type: "story",
-      title: "A Family’s Pain",
+      title: "",
       pageLabel: "Page 04",
       paragraphs: [
-        "Almost 10 years back, our elder daughter Dhrity died at the age of 5 months with the symptoms of SMA. We could not identify her SMA by genetic tests due to lack of awareness among doctors and hospitals.",
-        "It is very difficult to describe what we felt when we realized that our younger daughter was also suffering from the most hazardous type of SMA. We were helpless, but we did not lose hope.",
+        "From this void, a hope was born— <br><strong>CURE SMA Bangladesh Foundation.</strong><br><br> Through collecting data on SMA patients, connecting families, and raising awareness, we stepped forward—because we know this battle cannot be fought alone.<br> <br>Everything was moving forward. But in March 2024, during a trip to Kolkata, Olivia fell ill due to extreme heat. What began as a mild cold and fever turned into severe pneumonia. Due to inexperience in SMA-related treatment and delayed initiation of antibiotics, the situation became critical.<br> <br><strong>36 days on a hospital bed—every moment was a nightmare.</strong><br> <br>But once again, Olivia proved—she is a real SMA fighter.<br> <br> After 36 days of struggle, she returned.<br> And we proudly say— <br> <strong>“This is SMA Fighter Olivia.”</strong><br> <br> <strong>Today, Olivia is 4 years and 6 months old.</strong><br> Even without gene therapy, relying solely on <strong>Risdiplam</strong>, she continues to break her limits every single day.<br> <br>She can now take assisted steps wearing AFO braces.<br> <br> But Olivia’s strength is not only in her legs— <br> the brilliance of her mind, her voice, and her soul is astonishing.",
       ],
       images: [
         {
@@ -73,12 +71,10 @@
     },
     {
       type: "story",
-      title: "The Treatment Journey",
+      title: "Olivia’s Talent and Memory",
       pageLabel: "Page 06",
       paragraphs: [
-        "Our actual struggle started then. We were informed that only three approved medicines were available in the world and that acquiring the medication needed millions of dollars.",
-        "We communicated with Roche Bangladesh Ltd., which produces one of the approved medicines named Risdiplam. After four months of continuous struggle, we finally received the medicine and Nabonee’s treatment started.",
-        "We are profoundly thankful to Roche Bangladesh and Dhaka Shishu Hospital, especially Dr. Saoli Sarker, for their sincerity and dedication.",
+        "She can sing more than 200 songs completely from memory. Throughout the day, she eases her parents’ pain with the magic of her voice. Her repertoire includes Bangla, English, and Hindi songs—children’s songs, Rabindra Sangeet, Nazrul Geeti, modern and semi-classical music. Just by listening, she learns and sings with 90% accuracy in tune, rhythm, and melody.<br> <br> She can count using a geometric method—<br> 2 & 2 = 4,<br>4 & 4 = 8… <br> all the way up to 524,288.<br> <br>She has memorized multiplication tables from 2 to 6.<br>For any commonly used 2–3 letter word, she can effortlessly provide 5–7 rhyming words.<br> <br>Animals, birds, trees, flowers, fruits, vehicles, colors, and different shapes—she recognizes them all.<br> She knows days, months, and seasons in both Bangla and English.<br> From the world map, she can identify multiple countries using A to Z letters.<br> She knows all 7 continents and 5 oceans.",
       ],
       images: [
         {
@@ -93,11 +89,10 @@
     },
     {
       type: "story",
-      title: "Before and After Medicine",
+      title: "",
       pageLabel: "Page 07",
       paragraphs: [
-        "Before starting medication, her body was becoming soft like cotton. She was losing her strength to eat and had stopped breastfeeding. But after getting medication, her strength started returning.",
-        "She is much better now. She can sit for a while without support. Day by day she is improving. We hope that with the help of people and medication, she will be completely fine someday.",
+        "Olivia has taught us one profound lesson—<br> A body may be weak, but dreams are not.<br> <br>But this battle is far from over. A very long road still lies ahead.<br> <br>Risdiplam, therapies, regular follow-ups—everything is extremely expensive.<br>For a middle-class or lower-middle-class family, it is impossible to carry this fight alone.<br> <br>That is why we are creating this website—<br> to raise a treatment fund for Olivia.<br> <br>Your compassion, your support—<br>can become Olivia’s next step.<br>Another song. Another smile. Another life.<br> <br>If you stand beside her today, tomorrow Olivia will walk forward and say—<br>“I made it, I am making it, and I will make it—because you were with me, you are with me, and you will stay with me”.",
       ],
       images: [
         {
@@ -112,10 +107,10 @@
     },
     {
       type: "galleryText",
-      title: "Olivia’s Talent and Memory",
+      title: "",
       pageLabel: "Page 08",
       intro:
-        "SMA patients are usually very talented. Nabonee is now only 2.6 years old. At this age she can sing more than 50 songs in English, Hindi, and Bangla, memorize many rhymes and poems, count from 1 to 110, identify colors, and remember tones after hearing them once.",
+        "",
       images: [
         {
           src: "src/images/olivia's story-11.jpg",
@@ -127,25 +122,6 @@
         },
         {
           src: "src/images/olivia's story-13.jpg",
-          caption: "After started medication",
-        },
-      ],
-    },
-    {
-      type: "story",
-      title: "A Call for Support",
-      pageLabel: "Page 09",
-      paragraphs: [
-        "We really believe that if we can continue the treatment of our Nabonee, she will be completely cured. We want everyone to collectively extend a helping hand for our daughter’s treatment.",
-        "This situation is not only for our family, but for every family that has SMA patients facing similar challenges. SMA patients need supporting devices and medicines, which are very expensive. A middle-class family like ours cannot afford these alone.",
-      ],
-      images: [
-        {
-          src: "src/images/olivia's story-15.jpg",
-          caption: "After started medication",
-        },
-        {
-          src: "src/images/olivia's story-14.jpg",
           caption: "After started medication",
         },
       ],

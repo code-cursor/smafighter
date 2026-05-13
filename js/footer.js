@@ -11,7 +11,7 @@ function loadFooter() {
             <div>
               <h1 class="pb-3 text-xl font-semibold">SMA Fighter Olivia</h1>
               <div class="text-lg font-light">
-                <p>House-2039, Malibag, Dr. lane <br> Dhaka-1219, Bangladesh<br></p>
+                <p>152/C Doctor Lane, Boro Mogbazar, Ramna, Dhaka 1217, Bangladesh<br></p>
                 <p><a class="flex-1 text-decoration-none hover:text-white" href="tel:+8801716912288">+88 01716-912288</a></p>
                 <p><a class="flex-1 text-decoration-none hover:text-white" href="mailto:info@smafighterolivia.com">info@smafighterolivia.com</a></p>
               </div>
