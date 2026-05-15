@@ -357,7 +357,7 @@ function loadHeader() {
                       </li>
 
                       <li>
-                        <a href="sma-fighter-olivia-health-providers.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
+                        <a href="sma-fighter-olivia-executive-committee.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
                           <span class="mobile-menu-icon-box">
                             <i class="fa-solid fa-users-gear"></i>
                           </span>
@@ -468,7 +468,7 @@ function loadHeader() {
               </li>
 
               <li>
-                <a href="sma-fighter-olivia-medical-history.html" class="hover:text-btnColor1 pro-nav-link">
+                <a href="sma-fighter-olivia-executive-committee.html" class="hover:text-btnColor1 pro-nav-link">
                   Executive Committee
                 </a>
               </li>
