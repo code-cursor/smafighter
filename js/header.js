@@ -357,7 +357,7 @@ function loadHeader() {
                       </li>
 
                       <li>
-                        <a href="sma-fighter-olivia-medical-history.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
+                        <a href="sma-fighter-olivia-health-providers.html" onclick="document.getElementById('mobile-menu-toggle').checked=false" class="text-base font-semibold hover:text-btnColor1 pro-mobile-link">
                           <span class="mobile-menu-icon-box">
                             <i class="fa-solid fa-users-gear"></i>
                           </span>
@@ -370,7 +370,7 @@ function loadHeader() {
                           <span class="mobile-menu-icon-box">
                             <i class="fa-solid fa-user-doctor"></i>
                           </span>
-                          <span>Health Provider</span>
+                          <span>Health Providers</span>
                         </a>
                       </li>
 
@@ -474,8 +474,8 @@ function loadHeader() {
               </li>
 
               <li>
-                <a href="sma-fighter-olivia-medical-history.html" class="hover:text-btnColor1 pro-nav-link">
-                  Health Provider
+                <a href="sma-fighter-olivia-health-providers.html" class="hover:text-btnColor1 pro-nav-link">
+                  Health Providers
                 </a>
               </li>
 
